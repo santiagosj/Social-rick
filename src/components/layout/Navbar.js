@@ -5,7 +5,7 @@ import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 import Image from '../Image/Image'
 import Logo from '../../assets/logo.png'
-
+import './Navbar.scss'
 
 
 const Navbar = (props) => {
@@ -17,7 +17,7 @@ const Navbar = (props) => {
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
         <Link to='/' className="brand-logo" >
-           <Image imgSrc={Logo} alt='logo' style={{maxWidth: '190px'}} />
+           <Image imgSrc={Logo} alt='logo' style={{maxWidth: '190px'}} className="logo"/>
         </Link>
         {links}
       </div>

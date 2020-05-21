@@ -8,12 +8,14 @@ const SignedInLinks = (props) => {
     <div>
       <ul className="right">
         <li><NavLink to='/create'>New Post</NavLink></li>
+        <li><NavLink to='/people'>People</NavLink></li>
         {/* make a HOC */}
         <li><a onClick={props.signOut}>Log Out</a></li>
-        <li><NavLink to='/' className="btn btn-floating pink lighten-1">
+        <li><NavLink to={`/people/{id}`} className="btn btn-floating pink lighten-1">
           {props.profile.initials}
         </NavLink></li>
       </ul>
+      
     </div>
   )
 }
@@ -24,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SignedInLinks)
+export default connect(mapDispatchToProps)(SignedInLinks)
