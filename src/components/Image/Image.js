@@ -10,9 +10,9 @@ const Image = ({
    onClick,
    title = '',
    alt = '',
+   style,
 }) => {
-   let style = {}
-
+   
    if(background){
        style= {
         backgroundImage: `url(${imgSrc})`,
@@ -33,6 +33,7 @@ const Image = ({
                 onClick={onClick}
                 title={title}
                 alt={alt}
+                style={style}
               />
           )}
       </Fragment>

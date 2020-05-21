@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
+import Image from '../Image/Image'
+import Logo from '../../assets/logo.png'
+
+
 
 const Navbar = (props) => {
   const { auth, profile } = props;
@@ -12,7 +16,9 @@ const Navbar = (props) => {
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
-        <Link to='/' className="brand-logo">Social Rick</Link>
+        <Link to='/' className="brand-logo" >
+           <Image imgSrc={Logo} alt='logo' style={{maxWidth: '190px'}} />
+        </Link>
         {links}
       </div>
     </nav>

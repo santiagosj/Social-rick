@@ -33,7 +33,7 @@ class SignUp extends Component {
            className='logo'
         />
         
-        <form className="white" onSubmit={this.handleSubmit}>
+        <form className="aliceblue" onSubmit={this.handleSubmit}>
         
           <h5 className="grey-text text-darken-3">Sign Up</h5>
           <div className="input-field">
