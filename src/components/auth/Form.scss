@@ -1,0 +1,27 @@
+.form--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 561px;;
+    form{
+        width: 65%;
+        margin: auto;
+    }
+    
+    .logo{
+        max-width: 163px;
+        position: absolute;
+        top: 63px;
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
