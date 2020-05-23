@@ -6,7 +6,7 @@ import ProjectDetails from '../projects/ProjectDetails'
 import SignIn from '../auth/SignIn'
 import SignUp from '../auth/SignUp'
 import CreateProject from '../projects/CreateProject'
-import People from '../ProfileSection/People'
+import ProfileRouter from '../ProfileSection/ProfileRouter'
 
 const MainContent = () => {
     return (
@@ -17,7 +17,7 @@ const MainContent = () => {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
-            <Route path='/people' component={People} />
+            <Route path='/people' component={ProfileRouter} />
           </Switch>
         </div>
     )

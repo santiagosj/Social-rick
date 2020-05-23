@@ -46,3 +46,8 @@ export const signIn = (credentials) => {
       });
     }
   }
+
+ //desde aca despachar profile details actions
+  export const settingsUserProfileDetail = () => {}
+
+ 
