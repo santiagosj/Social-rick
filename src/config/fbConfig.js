@@ -4,15 +4,16 @@ import 'firebase/auth';
 
 // Replace this with your own config details
 var config = {
-    apiKey: "AIzaSyDasiZrIDW107kxPq93elXPEE-DvzDfFMo",
-    authDomain: "social-rick-eb972.firebaseapp.com",
-    databaseURL: "https://social-rick-eb972.firebaseio.com",
-    projectId: "social-rick-eb972",
-    storageBucket: "social-rick-eb972.appspot.com",
-    messagingSenderId: "988609765159",
-    appId: "1:988609765159:web:8910eb3d35a4f7658a5302"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL: process.env.REACT_APP_BASEURL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
 firebase.initializeApp(config);
 firebase.firestore()
 
 export default firebase 
+
