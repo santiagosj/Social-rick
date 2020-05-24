@@ -8,7 +8,7 @@ const ProfileList = ({users}) => {
       { users && users.map(user => {
         return (
            
-            <ProfileCard user={user} />
+            <ProfileCard user={user} key={user.slug}/>
             
         )
       })}  

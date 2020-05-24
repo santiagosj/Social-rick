@@ -1,24 +1,38 @@
-import React from 'react'
+import React,{Fragment, useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authActions'
+import './Navbar.scss'
+
 
 const SignedInLinks = (props) => {
+  const [active, setActive] = useState(false)
+  
+  //Hacer con Redux
+  const handleMenuToggle = () => setActive(!active)
+
+  const {signOut} = props
+  
   return (
-    <div>
+    <Fragment>
+       <div className={`Nav right`} onClick={handleMenuToggle} >
+          <div  className="Image--container">
+              <NavLink to='#' className={ `btn btn-floating pink lighten-1 ` } title='My Profile'>
+                {props.profile.initials}
+              </NavLink>
+          </div>
+          <div className={`${active ? 'Nav-active' : 'Nav-inactive'}`}>
+              <NavLink to={`/people/`+ props.profile.slug } className={'nav-item'}> My Profile </NavLink>
+              <NavLink to={`/settings/`} className={'nav-item'}> Settings </NavLink>
+              <a onClick={signOut} className={'nav-item'}>Log Out</a>
+          </div>
+        </div>
       <ul className="right">
         <li><NavLink to='/create'>New Post</NavLink></li>
         <li><NavLink to='/people'>People</NavLink></li>
-        {/* make a HOC */}
-        <li><a onClick={props.signOut}>Log Out</a></li>
-        <li>
-        <NavLink to={`/people/`+ props.profile.slug } className="btn btn-floating pink lighten-1" title='My Profile'>
-          {props.profile.initials}
-        </NavLink>
-        </li>
       </ul>
       
-    </div>
+    </Fragment>
   )
 }
 
@@ -29,3 +43,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(null, mapDispatchToProps)(SignedInLinks)
+

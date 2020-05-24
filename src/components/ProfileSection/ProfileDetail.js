@@ -34,7 +34,7 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     const users = state.firestore.data.users;
     const user = users ? users[id] : null
-    console.log(id)
+   // console.log(id)
     return {
       user : user,
       auth: state.firebase.auth

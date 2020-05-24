@@ -21,14 +21,14 @@ class CreateProject extends Component {
   }
   render() {
     
-    const { auth } = this.props;
+    const { auth, profile } = this.props;
     if (!auth.uid) return <Redirect to='/signin' /> 
 
     console.log(auth)
     return (
       <div className="container">
         <form className="create-post-form" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">What is in your mind...?</h5>
+          <h5 className="grey-text text-darken-3">{ `What is in your mind ${profile.firstName} ... ? ` }</h5>
           <div className="input-field">
             <input type="text" id='title' onChange={this.handleChange} />
             <label htmlFor="title">Post Title</label>
@@ -48,7 +48,8 @@ class CreateProject extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    profile: state.firebase.profile,
   }
 }
 

@@ -20,7 +20,7 @@ const ProfileCard = ({user, auth}) => {
                 <div className="card my-class-card">
                
                 <div className="card-image profile-card">
-                   <Image imgSrc={user.userImg ? user.userImg : userDefaultImg} style={imgStyles}/>
+                   <Image imgSrc={user.userImg ? user.userImg : userDefaultImg} style={imgStyles} alt={ `${user.firstName} image` }/>
                    <span className="card-title title">{user.firstName} {user.lastName}</span>
                 </div>
                     

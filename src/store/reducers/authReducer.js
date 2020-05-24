@@ -35,7 +35,7 @@ const initState = {
           ...state,
           authError: action.err.message
         }
-  
+
       default:
         return state
     }

@@ -7,6 +7,7 @@ import SignIn from '../auth/SignIn'
 import SignUp from '../auth/SignUp'
 import CreateProject from '../projects/CreateProject'
 import ProfileRouter from '../ProfileSection/ProfileRouter'
+import Settings from '../ProfileSection/Settings'
 
 const MainContent = () => {
     return (
@@ -17,6 +18,7 @@ const MainContent = () => {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
+            <Route exact path={'/settings'} component={Settings} />
             <Route path='/people' component={ProfileRouter} />
           </Switch>
         </div>
