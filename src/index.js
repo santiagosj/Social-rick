@@ -29,6 +29,7 @@ const rrfConfig = {
   attachAuthIsReady: true,
   useFirestoreForProfile: true
 };
+
 const rrfProps = {
   firebase: fbConfig,
   config: rrfConfig,

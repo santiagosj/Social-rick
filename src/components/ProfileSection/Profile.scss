@@ -1,11 +1,28 @@
 .my-class-card{
     width: 214px;
     .profile-card{
-        background-color: #a7d7ff;
+        color: black;
+        border-radius: 50%;
+        overflow: hidden;
         .title{
             width: 100%;
             text-align: center;
         }
     
+    }
+}
+.image-mask{
+    overflow: hidden;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    float: right;
+    img{
+        width: 200px;
+    }
+}
+.profile-container{
+    h1{
+        display: inline;
     }
 }

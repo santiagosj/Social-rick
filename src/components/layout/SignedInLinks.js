@@ -24,7 +24,7 @@ const SignedInLinks = (props) => {
           <div className={`${active ? 'Nav-active' : 'Nav-inactive'}`}>
               <NavLink to={`/people/`+ props.profile.slug } className={'nav-item'}> My Profile </NavLink>
               <NavLink to={`/settings/`} className={'nav-item'}> Settings </NavLink>
-              <a onClick={signOut} className={'nav-item'}>Log Out</a>
+              <button onClick={signOut} className={'nav-item'}>Log Out</button>
           </div>
         </div>
       <ul className="right">

@@ -22,6 +22,17 @@
             cursor: pointer;
         }
     }
+    button{
+        border: none;
+        background: white;
+        height: 100%;
+        transition: .4s ease-in-out;
+        &:hover{
+            transition: .4s ease-in-out;
+            background-color: rgb(221, 221, 221);
+            cursor: pointer;
+        }
+    }
 }
 .Nav-inactive{
     transition: 2s ease-in-out;

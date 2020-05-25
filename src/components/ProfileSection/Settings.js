@@ -2,15 +2,28 @@ import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux'
 import {updateProfile} from '../../store/actions/userActions'
-
-
  class Settings extends Component {
-
-    state = {
+     
+     constructor(){
+      super()
+      this.state = {
         bio: '',
-        img: '',
-        city:''
+        city:'',
+       // error: null,
+        percent: 0, 
+        //showProgress: null,
+        fileName:'', //url bucket
+        userImg:null
       }
+     }
+    
+
+      componentDidMount(){
+        //this.props.getData();
+        console.log(this.state)
+      }
+
+     // fileInputRef = React.createRef();
 
       handleChange = (e) => {
         this.setState({
@@ -21,16 +34,28 @@ import {updateProfile} from '../../store/actions/userActions'
       handleSubmit = (e) => {
         e.preventDefault();
         // console.log(this.state);
+        
+
         this.props.updateProfile(this.state);
         this.props.history.push('/');
       }
 
-      /*handleFile = (e) =>{
-        const file = e.target.files[0]
-      }*/
-      
+      handleFile(e){
+        e.preventDefault();
+        
+        let file =  e.target.files[0]
+
+        //let fileName =  e.target.files[0].name
+
+        this.setState({ 
+          userImg:file
+        });
+          console.log(this.state, file)
+      }
+
     render() {
         const { auth , profile } = this.props;
+        const { percent } = this.state;
       //  console.log(profile)
         if (!auth.uid) return <Redirect to='/signin' /> 
         return (
@@ -50,8 +75,10 @@ import {updateProfile} from '../../store/actions/userActions'
               </div>
 
               <div className="input-field">
-                <input type="file" id='img' onChange={this.handleChange} />
-                
+                            
+                <input type="file" id='img' onChange={(e)=>this.handleFile(e)} />
+               
+                <progress value={percent} max='100'>{percent} % </progress>
               </div>
 
               <div className="input-field">
@@ -69,13 +96,18 @@ const mapStateToProps = (state) => {
     return {
       auth: state.firebase.auth,
       profile: state.firebase.profile,
+    //  error: state.error,
+      percent: state.percent,
+     // showProgress: state.showProgress,
+      uploadValue: state.uploadValue,
     }
   }
  
   const mapDispatchToProps = dispatch => {
         return {
-        updateProfile: (userDetails) => dispatch(updateProfile(userDetails))
-  }
+           updateProfile: (userDetails) => dispatch(updateProfile(userDetails)),
+    
+        }
 }
    
 export default connect(mapStateToProps, mapDispatchToProps)(Settings) 

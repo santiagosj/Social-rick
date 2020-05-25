@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 import './Profile.scss'
 
 const imgStyles = {
-    maxWidth: '200px',
-    borderRadius: '50%',
+    width: 'auto',
+    height:'219px',
     margin:'auto'
 }
 const ProfileCard = ({user, auth}) => {
@@ -25,7 +25,7 @@ const ProfileCard = ({user, auth}) => {
                 </div>
                     
                     <div className="card-content">
-                       <p>{user.bio ? user.bio : 'add bio stract...'}</p>
+                       <p>Hola soy {user.firstName}</p>
                     </div>
                     
                     <div className="card-action">
