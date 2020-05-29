@@ -11,6 +11,7 @@ const Image = ({
    title = '',
    alt = '',
    style,
+   dataDepth
 }) => {
    
    if(background){
@@ -34,6 +35,7 @@ const Image = ({
                 title={title}
                 alt={alt}
                 style={style}
+                data-depth={dataDepth}
               />
           )}
       </Fragment>

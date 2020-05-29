@@ -22,7 +22,7 @@ import './Profile.scss'
         if (!auth.uid) return <Redirect to='/signin' /> 
         if(user){
             return (
-                <section className='container'>
+                <section className='container' style={{width:'60%',marginRight:0}}>
                     <div className='profile-container' style={profileStyles}>
                        <Profile user={user}/> 
                     </div> 
@@ -35,7 +35,6 @@ import './Profile.scss'
                 </div>
             )
         }
-          
 }
 
 
@@ -44,7 +43,7 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     const users = state.firestore.data.users;
     const user = users ? users[id] : null
-   // console.log(id)
+   
     return {
       user : user,
       auth: state.firebase.auth

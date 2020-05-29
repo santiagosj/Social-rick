@@ -11,7 +11,7 @@ import Settings from '../ProfileSection/Settings'
 
 const MainContent = () => {
     return (
-        <div className="main-content">
+        <div className="main-content" style={{position:'relative'}}>
           <Switch>
             <Route exact path='/' component={Dashboard} /> {/** HOME */}
             <Route path='/project/:id' component={ProjectDetails} /> 

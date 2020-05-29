@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
 import { Redirect } from 'react-router-dom'
 import './Form.scss'
-import Image from '../Image/Image'
-import Logo from '../../assets/portal.png'
 class SignIn extends Component {
   state = {
     email: '',
@@ -24,11 +22,7 @@ class SignIn extends Component {
     if (auth.uid) return <Redirect to='/' /> 
     return (
       <div className="container form--container">
-      <Image 
-           imgSrc={Logo} 
-           alt={'Social Rick!'}
-           className='logo'
-        />
+      
         <form className="aliceblue" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Sign In</h5>
           <div className="input-field">
@@ -40,7 +34,7 @@ class SignIn extends Component {
             <input type="password" id='password' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button className="btn lighten-1 z-depth-0">Login</button>
             <div className="center red-text">
               { authError ? <p>{authError}</p> : null }
             </div>

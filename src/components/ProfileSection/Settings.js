@@ -82,7 +82,7 @@ import {updateProfile} from '../../store/actions/userActions'
               </div>
 
               <div className="input-field">
-                <button className="btn pink lighten-1">Update</button>
+                <button className="btn lighten-1">Update</button>
               </div>
 
             </form>

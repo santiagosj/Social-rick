@@ -3,8 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
 import './Form.scss'
-import Image from '../Image/Image'
-import Logo from '../../assets/portal.png'
+
 
 class SignUp extends Component {
   state = {
@@ -27,12 +26,7 @@ class SignUp extends Component {
     if (auth.uid) return <Redirect to='/' /> 
     return (
       <div className="container form--container">
-        <Image 
-           imgSrc={Logo} 
-           alt={'Social Rick!'}
-           className='logo'
-        />
-        
+       
         <form className="aliceblue" onSubmit={this.handleSubmit}>
         
           <h5 className="grey-text text-darken-3">Sign Up</h5>
@@ -53,7 +47,7 @@ class SignUp extends Component {
             <input type="text" id='lastName' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
+            <button className="btn lighten-1 z-depth-0">Sign Up</button>
             <div className="center red-text">
               { authError ? <p>{authError}</p> : null }
             </div>
