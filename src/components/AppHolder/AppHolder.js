@@ -1,7 +1,7 @@
 import React,{ Component} from 'react'
 import Navbar from '../layout/Navbar'
 import MainContent from '../MainContent/MainContent'
-import Parallax from 'parallax-js'
+//import Parallax from 'parallax-js'
 import portal_0 from '../../assets/portal.png'
 import portal_1 from '../../assets/portal-1.png'
 import portal_2 from '../../assets/portal-2.png'
@@ -10,14 +10,15 @@ import logo from '../../assets/logo.png'
 import rickMorty from '../../assets/rick-morty.png'
 import './AppHolder.scss'
 
-
 class AppHolder extends Component  {
+  
     constructor(props) {
         super(props);
         this.state = {};
         this.scene = React.createRef();
       }
-      componentDidUpdate(){
+
+      /*componentDidUpdate(){
         if (this.scene) {
             var childNodes = this.scene.current.childNodes;
             var i;
@@ -31,7 +32,7 @@ class AppHolder extends Component  {
 
      componentWillUnmount(){
         this.parallax.disable()
-     }
+     }*/
 
     render(){
         return (
@@ -94,7 +95,7 @@ class AppHolder extends Component  {
                </div>
     
                <Navbar />
-               <MainContent/>
+               <MainContent />
             </div>
         )
     }
