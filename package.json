@@ -11,7 +11,7 @@
     "materialize-css": "^1.0.0",
     "materialize-social": "^1.0.3",
     "moment": "^2.25.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "parallax-js": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
